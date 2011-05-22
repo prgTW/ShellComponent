@@ -34,16 +34,20 @@ class ShellComponent extends Component {
 	 * Run shell task
 	 *
 	 * Example:
-	 * $this->Shell->run('shell_name', 'task_name', array('param1' => 1, 'param2' => 2));
+	 * $this->Shell->run('shell_name', 'task_name', array('param1' => 1, 'param2' => 2), false);
 	 *
-	 * Options
-	 * - 'task' - Task to run
-	 * - 'params' - Params to pass to shell
-	 * - 'bg' - If script should run in background
+	 * or array-like:
+	 *
+	 * $this->Shell->run(array(
+	 *   'shell' => 'shell_name',
+	 *   'task' => 'task_name',
+	 *   'params' => array('param1' => 1, 'param2' => 2),
+	 *   'background' => false
+	 * );
 	 *
 	 * @param string $shell Shell name
 	 * @param string $task Task to run
-	 * @param array $params Parameters to pass to task
+	 * @param array $params Parameters to pass to shell task
 	 * @param array $background Whether to run the task in background
 	 * @return mixed String as shell task output, boolean false when shell/task not found
 	 */
